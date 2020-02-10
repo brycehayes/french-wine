@@ -1,0 +1,60 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div class="card-body">
+		<div class="row">
+			<div class="col-md-2">Filter by:</div>
+			<div class="col-md-4">
+				<input type="text"/>
+
+			</div>
+
+      <div class="z-value">
+       z = {{z}}
+       <div class="displayEqn" *ngIf='z==9' >
+         <button type="button" name="button">
+           Click to Change Value
+         </button>
+       </div>
+      </div>
+
+
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h4>Filtered by: </h4>
+			</div>
+		</div>
+</div>
+<div class="table-responsive">
+			<table class="table"
+           *ngIf='hobbies && hobbies.length'>
+				<thead>
+					<tr>
+						<th>
+							<button class="btn btn-primary">
+								Show Image
+							</button>
+						</th>
+						<th>Hobby</th>
+						<th>Code</th>
+						<th>TimeAndDate</th>
+						<th>Cost</th>
+						<th>5 Star Rating</th>
+					</tr>
+				</thead>
+				<tbody>
+          <tr *ngFor='let hobby of hobbies'>
+            <td></td>
+
+            <td>{{hobby.hobbyName}}</td>
+            <td>{{hobby.code}}</td>
+            <td>{{hobby.timeAndDate}}</td>
+            <td>{{hobby.cost}}</td>
+            <td><pm-star></pm-star></td>
+          </tr>
+				</tbody>
+			</table>
+		</div>
+</div>

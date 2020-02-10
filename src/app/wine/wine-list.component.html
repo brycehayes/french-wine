@@ -1,0 +1,76 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div>
+    <img src='assets/images/france.png' width='150px'>
+  </div>
+  <div class="card-body">
+		<div class="row">
+      <button class="btn btn-primary" (click)='toggleRegion()'>
+        {{showRegions ? "Hide":"Go to"}} Region
+      </button>
+			<div class="col-md-2">Filter by:</div>
+			<div class="col-md-4">
+				<input type="text" [(ngModel)]='listFilter'/>
+
+			</div>
+
+
+		</div>
+		<div class="row">
+			<div class="col-md-6">
+				<h4>Filtered by: {{listFilter}}</h4>
+			</div>
+		</div>
+  </div>
+
+  <div class="table-responsive">
+  			<table class="table"
+             *ngIf='wines && wines.length'>
+  				<thead>
+  					<tr>
+  						<th>
+  							<button class="btn btn-primary"
+                  (click)='toggleImage()'>
+  								{{showImage ? 'Hide' : 'Show'}} Image
+  							</button>
+  						</th>
+  						<th>Wine Name</th>
+              <th>Code</th>
+  						<th>Region</th>
+              <th>Primary Grape</th>
+  						<th>Price</th>
+  						<th>Year</th>
+  						<th>5 Star Rating</th>
+  					</tr>
+  				</thead>
+  				<tbody>
+            <tr *ngFor="let wine of filteredWines">
+              <td>
+                  <img *ngIf="showImage"
+                        [src]='wine.imageUrl'
+                        [title]='wine.wineName'
+                        [style.width.px]='imageWidth'
+                        [style.margin.px]='imageMargin'
+                        >
+              </td>
+              <td>{{wine.wineName}}</td>
+              <td>{{wine.code | uppercase | convertToSpaces: '-'}}</td>
+              <td>{{wine.region}}</td>
+              <td>{{wine.grapeType}}</td>
+              <td>{{wine.price | currency: 'GBP' : 'symbol' : '1.2-2'}}</td>
+              <td>{{wine.year}}</td>
+              <td><pm-star [rating]='wine.starRating'
+                (ratingClicked)='onRatingClicked($event)'></pm-star></td>
+            </tr>
+
+  				</tbody>
+  			</table>
+  		</div>
+      <div *ngIf="showRegions">
+        <french-region></french-region>
+      </div>
+
+
+</div>
