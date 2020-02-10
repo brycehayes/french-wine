@@ -43,6 +43,13 @@ export class FrenchRegionComponent implements OnInit{
       "numberOfBeauxVillages": "vingt quatre",
       "imageUrl": "assets/images/Usson.svg.png"
     }
+    {
+      "regionNumber": 5,
+      "regionName": "Normandy",
+      "capital": "Rouen",
+      "numberOfBeauxVillages": "Cinq",
+      "imageUrl": "assets/images/Provence-Alpes-Cote_dAzur.svg"
+    }
   ];
 
 
