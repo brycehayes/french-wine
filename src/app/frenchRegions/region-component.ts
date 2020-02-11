@@ -71,6 +71,8 @@ export class FrenchRegionComponent implements OnInit{
     console.log("J'ai fait quelque chose");
     console.log("Je pense que c'est travail");
     console.log("Je serai reussir");
+    console.log("J'ai change le fichier");
+    console.log("J'ai etait heureux depuis travaille ici")
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
