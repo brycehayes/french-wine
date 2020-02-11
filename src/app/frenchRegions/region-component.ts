@@ -69,7 +69,7 @@ export class FrenchRegionComponent implements OnInit{
 
   toggleCoatOfArmsImage(): void {
     console.log("J'ai fait quelque chose");
-    console.log("Je pense que c'est travail")
+    console.log("Je pense que c'est travail");
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
