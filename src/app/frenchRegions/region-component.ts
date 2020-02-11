@@ -42,14 +42,24 @@ export class FrenchRegionComponent implements OnInit{
       "capital": "Lyon",
       "numberOfBeauxVillages": "vingt quatre",
       "imageUrl": "assets/images/Usson.svg.png"
-    }
+    },
     {
       "regionNumber": 5,
       "regionName": "Normandy",
       "capital": "Rouen",
       "numberOfBeauxVillages": "Cinq",
-      "imageUrl": "assets/images/Provence-Alpes-Cote_dAzur.svg"
+      "imageUrl": "assets/images/Lyons-la-Foret.svg.png"
+    },
+
+
+    {
+      "regionNumber": 6,
+      "regionName": "Bourgogne-Franche-Comte",
+      "capital": "Dijon",
+      "numberOfBeauxVillages": "Neuf",
+      "imageUrl": "assets/images/Lods.svg.png"
     }
+
   ];
 
 
