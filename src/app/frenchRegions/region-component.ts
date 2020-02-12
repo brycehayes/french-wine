@@ -67,7 +67,8 @@ export class FrenchRegionComponent implements OnInit{
 
   toggleCoatOfArmsImage(): void {
     console.log("J'ai fait quelque chose");
-    console.log("Je pense que c'est travail")
+    console.log("Je pense que c'est travail");
+    console.log("Future avoir - J'aurai, Tu auras, elle aura, nous aurons, vous aurez, elles auront");
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
