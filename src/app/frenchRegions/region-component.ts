@@ -60,7 +60,17 @@ export class FrenchRegionComponent implements OnInit{
       "regionName": "Normandy",
       "capital": "Rouen",
       "numberOfBeauxVillages": "Cinq",
-      "imageUrl": "assets/images/Lyons-la-Foret.svg.png"
+"imageUrl": "assets/images/Lyons-la-Foret.svg.png"
+    },
+
+    {
+      "regionNumber": 7,
+      "regionName": "Brittany",
+      "capital": "Rennes",
+      "numberOfBeauxVillages": "Six",
+      "imageUrl": "assets/images/Locronan.svg.png"
+
+
     },
     {
       "regionNumber": 6,
@@ -68,6 +78,7 @@ export class FrenchRegionComponent implements OnInit{
       "capital": "Dijon",
       "numberOfBeauxVillages": "Neuf",
       "imageUrl": "assets/images/Lods.svg.png"
+
     }
   ];
 
@@ -79,9 +90,13 @@ export class FrenchRegionComponent implements OnInit{
   toggleCoatOfArmsImage(): void {
     console.log("J'ai fait quelque chose");
     console.log("Je pense que c'est travail");
+
+    console.log("Future avoir - J'aurai, Tu auras, elle aura, nous aurons, vous aurez, elles auront");
+
     console.log("Je serai reussir");
     console.log("J'ai change le fichier");
     console.log("J'ai etait heureux depuis travaille ici")
+
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
