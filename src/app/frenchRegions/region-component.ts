@@ -12,18 +12,22 @@ export class FrenchRegionComponent implements OnInit{
   imageWidth: number = 50;
   imageMargin: number = 2;
   showCoatsOfArms: boolean = false;
-  // _filterRegionList: string;
-  //
-  // get filterRegionList(): string {
-  //   return this._filterRegionList;
-  // }
-  // set filterRegionList(value: string) {
-  //   this._filterRegionList = value;
-  //   this.filteredRegions
-  //      = this.filterRegionList ? this.performFilter(this.filterRegionList):this.regions;
-  // }
-  //
-  // filteredRegions = IRegion[];
+
+ //listFilter: string='Cor';
+
+  _regionListFilter: string;
+
+  get regionListFilter(): string {
+    return this._regionListFilter;
+  }
+  set regionListFilter(value: string) {
+    this._regionListFilter = value;
+    this.filteredRegions = this.regionListFilter ? this.performRegionFilter(this.regionListFilter) : this.regions;
+  }
+
+  filteredRegions: IRegion[];
+
+
   regions:  IRegion[] = [
     {
       "regionNumber": 1,
@@ -70,8 +74,6 @@ export class FrenchRegionComponent implements OnInit{
 
 
     },
-
-
     {
       "regionNumber": 6,
       "regionName": "Bourgogne-Franche-Comte",
@@ -80,12 +82,11 @@ export class FrenchRegionComponent implements OnInit{
       "imageUrl": "assets/images/Lods.svg.png"
 
     }
-
   ];
 
 
   ngOnInit(): void {
-    console.log("Oninit for region");
+    console.log("Oninit for French region");
   }
 
   toggleCoatOfArmsImage(): void {
@@ -101,10 +102,18 @@ export class FrenchRegionComponent implements OnInit{
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
-  // performFilter(filterBy: string): IRegion[] {
-  //   filterBy = filterBy.toLocaleLowerCase();
-  //   return this.regions.filter((region: IRegion) =>
-  //       region.regionName.toLocaleLowerCase().indexOf(filterBy) !== -1);
-  // }
+
+  constructor() {
+    this.filteredRegions = this.regions;
+    this.regionListFilter = 'Cors';
+  }
+
+  performRegionFilter(filterBy: string) : IRegion[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.regions.filter((region : IRegion) =>
+          region.regionName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
+
+
 
 }
