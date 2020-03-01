@@ -12,8 +12,18 @@ export class FrenchRegionComponent implements OnInit{
   imageWidth: number = 50;
   imageMargin: number = 2;
   showCoatsOfArms: boolean = false;
-
-;
+  // _filterRegionList: string;
+  //
+  // get filterRegionList(): string {
+  //   return this._filterRegionList;
+  // }
+  // set filterRegionList(value: string) {
+  //   this._filterRegionList = value;
+  //   this.filteredRegions
+  //      = this.filterRegionList ? this.performFilter(this.filterRegionList):this.regions;
+  // }
+  //
+  // filteredRegions = IRegion[];
   regions:  IRegion[] = [
     {
       "regionNumber": 1,
@@ -48,7 +58,7 @@ export class FrenchRegionComponent implements OnInit{
       "regionName": "Normandy",
       "capital": "Rouen",
       "numberOfBeauxVillages": "Cinq",
-"imageUrl": "assets/images/Lyons-la-Foret.svg.png"
+      "imageUrl": "assets/images/Lyons-la-Foret.svg.png"
     },
 
     {
@@ -91,6 +101,10 @@ export class FrenchRegionComponent implements OnInit{
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
-
+  // performFilter(filterBy: string): IRegion[] {
+  //   filterBy = filterBy.toLocaleLowerCase();
+  //   return this.regions.filter((region: IRegion) =>
+  //       region.regionName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  // }
 
 }

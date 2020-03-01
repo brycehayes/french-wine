@@ -13,7 +13,6 @@ export class WineListComponent implements OnInit{
   imageMargin: number = 2;
   showImage: boolean = false;
   showRegions: boolean = false;
-
   _listFilter: string;
 
   get listFilter(): string {
@@ -27,7 +26,7 @@ export class WineListComponent implements OnInit{
 
   filteredWines: IWine[];
 
-  wines: IWine[] = [
+  wines:  IWine[] = [
     {
       "wineId": 101,
       "wineName": "Gigondas",
@@ -164,6 +163,7 @@ export class WineListComponent implements OnInit{
     return this.wines.filter((wine: IWine) =>
         wine.region.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
+
   onClick(): void {
     console.log('The show/hide button was clicked!');
   }
