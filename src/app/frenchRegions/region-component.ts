@@ -12,8 +12,20 @@ export class FrenchRegionComponent implements OnInit{
   imageWidth: number = 50;
   imageMargin: number = 2;
   showCoatsOfArms: boolean = false;
+ //listFilter: string='Cor';
 
-;
+  _regionListFilter: string;
+
+  get regionListFilter(): string {
+    return this._regionListFilter;
+  }
+  set regionListFilter(value: string) {
+    this._regionListFilter = value;
+    this.filteredRegions = this.regionListFilter ? this.performRegionFilter(this.regionListFilter) : this.regions;
+  }
+
+  filteredRegions: IRegion[];
+
   regions:  IRegion[] = [
     {
       "regionNumber": 1,
@@ -50,8 +62,6 @@ export class FrenchRegionComponent implements OnInit{
       "numberOfBeauxVillages": "Cinq",
       "imageUrl": "assets/images/Lyons-la-Foret.svg.png"
     },
-
-
     {
       "regionNumber": 6,
       "regionName": "Bourgogne-Franche-Comte",
@@ -59,12 +69,11 @@ export class FrenchRegionComponent implements OnInit{
       "numberOfBeauxVillages": "Neuf",
       "imageUrl": "assets/images/Lods.svg.png"
     }
-
   ];
 
 
   ngOnInit(): void {
-    console.log("Oninit for region");
+    console.log("Oninit for French region");
   }
 
   toggleCoatOfArmsImage(): void {
@@ -76,6 +85,16 @@ export class FrenchRegionComponent implements OnInit{
     this.showCoatsOfArms = !this.showCoatsOfArms;
   }
 
+  constructor() {
+    this.filteredRegions = this.regions;
+    this.regionListFilter = 'Cors';
+  }
+
+  performRegionFilter(filterBy: string) : IRegion[] {
+    filterBy = filterBy.toLocaleLowerCase();
+    return this.regions.filter((region : IRegion) =>
+          region.regionName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+  }
 
 
 }
