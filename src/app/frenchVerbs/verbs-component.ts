@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
       </div>`
 })
 export class FrenchVerbsComponent{
-  pageTitle: string = 'French Verbs - Angular learning Project';
+  pageTitle: string = 'French Verbs: Angular learning Project';
 }
