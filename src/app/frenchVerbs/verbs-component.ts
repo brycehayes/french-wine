@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
         <div>French Verb Component</div>
       </div>`
 })
-export class FrenchVerbsComponent{
+export clas FrenchVerbsComponent{
   pageTitle: string = 'French Verbs: Angular learning Project';
 }
