@@ -10,16 +10,14 @@ import { HobbiesListComponent } from './hobbies/hobbies-list.component';
 import { WineListComponent } from './wine/wine-list.component';
 import { FrenchRegionComponent } from './frenchRegions/region-component';
 import { StarComponent } from './shared/star.component';
-import { FrenchVerbsComponent } from './frenchVerbs/verbs-component';
-
+//
 @NgModule({
   declarations: [AppComponent,
                 HobbiesListComponent,
                 WineListComponent,
                 ConvertToSpacesPipe,
                 StarComponent,
-                FrenchRegionComponent,
-                FrenchVerbsComponent],
+                FrenchRegionComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
