@@ -7,7 +7,8 @@ import { IVerb } from './verb';
 })
 export class VerbListComponent {
     pageTitle: string = "Verb Conjugation: Angular learning project";
-
+    imageWidth: number = 50;
+    imageMargin: number = 2;
     verbList: IVerb[] = [
       {
         "id": 101,
@@ -16,6 +17,7 @@ export class VerbListComponent {
         "irregular": true,
         "pastParticiple": "ete",
         "starRating": 5,
+        "imageUrl": "assets/images/st_emilion.jpeg"
       },
       {
         "id": 102,
@@ -24,6 +26,7 @@ export class VerbListComponent {
         "irregular": true,
         "pastParticiple": "eu",
         "starRating": 5,
+        "imageUrl": "assets/images/sainte-berthe.jpg"
     },
     {
       "id": 103,
@@ -32,6 +35,7 @@ export class VerbListComponent {
       "irregular": false,
       "pastParticiple": "mange",
       "starRating": 4,
+      "imageUrl": "assets/images/louis_jardot.jpeg"
   }
     ]
 }

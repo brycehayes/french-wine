@@ -33,8 +33,19 @@
               </tr>
             </thead>
             <tbody>
-
-
+              <tr *ngFor="let verb of verbList">
+                <td>
+                  <img [src]="verb.imageUrl"
+                      [title]="verb.verbInfinitive"
+                      [style.width.px]="imageWidth"
+                      [style.margin.px]="imageMargin">
+                </td>
+                <td>{{verb.verbInfinitive}}</td>
+                <td>{{verb.english}}</td>
+                <td>{{verb.irregular}}</td>
+                <td>{{verb.pastParticiple}}</td>
+                <td>{{verb.starRating}}</td>
+              </tr>
             </tbody>
           </table>
         </div>
